@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="Eco-Dulce es un videojuego educativo en RPG Maker XP sobre la contaminación en Moniquirá, Boyacá. Cumple misiones, cuida tu municipio y su gente.">
+<title>ECO-DULCE — Moniquirá también siente</title>
+<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="img/favicon-64.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+<header>
+  <div class="header-brand">
+    <img src="img/logo-eco-dulce.png" alt="Logo Eco-Dulce" class="logo-img">
+    <span class="tagline">Moniquirá también siente</span>
+  </div>
+  <button class="btn-hamburguesa" id="hamburguesa" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav id="nav-principal">
+    <button data-page="inicio" class="btn-nav-naranja active">Inicio</button>
+    <button data-page="historia" class="btn-nav-naranja">Historia</button>
+    <button data-page="personajes" class="btn-nav-naranja">Personajes</button>
+    <button data-page="misiones" class="btn-nav-naranja">Misiones</button>
+    <button data-page="equipo" class="btn-nav-naranja">Equipo</button>
+    <button data-page="ayuda" class="btn-nav-naranja">Ayuda</button>
+    <button data-page="descargar" class="btn-descargar-nav">Descargar</button>
+  </nav>
+  <div class="nav-overlay" id="nav-overlay"></div>
+</header>
+
+<main>
+
+  <!-- INICIO -->
+  <section id="inicio" class="page active">
+
+    <div class="carrusel carrusel-grande" id="carrusel">
+      <div class="carrusel-track" id="track"><!-- slides generados por js/script.js --></div>
+      <button class="carrusel-arrow left" id="flecha-izq" aria-label="Misión anterior">
+        <svg viewBox="0 0 24 24"><polygon points="16,3 16,21 4,12"/></svg>
+      </button>
+      <button class="carrusel-arrow right" id="flecha-der" aria-label="Misión siguiente">
+        <svg viewBox="0 0 24 24"><polygon points="8,3 8,21 20,12"/></svg>
+      </button>
+      <div class="carrusel-barras" id="barras"></div>
+    </div>
+
+    <div class="hero-box">
+      <div class="eyebrow">Videojuego educativo — Moniquirá</div>
+      <h1>Moniquirá siente <span>el peso</span><br>de la contaminación.</h1>
+      <p>Ponte en los zapatos de Luz y cumple misiones por Moniquirá para cuidar su entorno y su gente. Cada decisión que tomes se refleja en cómo termina la historia.</p>
+      <button class="btn-eco btn-jugar" onclick="irA('descargar')">Jugar ahora</button>
+    </div>
+
+    <div class="ods-strip">
+      <div class="ods-item" data-ods="6" tabindex="0" role="button" aria-haspopup="dialog">ODS 6<br><small>Agua limpia</small></div>
+      <div class="ods-item" data-ods="11" tabindex="0" role="button" aria-haspopup="dialog">ODS 11<br><small>Ciudades sostenibles</small></div>
+      <div class="ods-item" data-ods="12" tabindex="0" role="button" aria-haspopup="dialog">ODS 12<br><small>Consumo responsable</small></div>
+      <div class="ods-item" data-ods="4" tabindex="0" role="button" aria-haspopup="dialog">ODS 4<br><small>Educación de calidad</small></div>
+    </div>
+  </section>
+
+  <!-- HISTORIA (del videojuego) -->
+  <section id="historia" class="page">
+    <div class="eyebrow">La historia de Eco-Dulce</div>
+    <h2 class="titulo">Historia del videojuego</h2>
+    <div class="historia-grid">
+      <div class="card personaje-card">
+        <img src="img/historia-01-punto-partida.png" alt="Marcador del punto de partida" class="personaje-img personaje-img--sm">
+        <div>
+          <h3>El punto de partida</h3>
+          <p>Luz vuelve a Moniquirá después de un tiempo fuera y encuentra su ciudad contaminada. Es su hogar, y decide no quedarse quieta: hará algo para arreglarlo.</p>
+        </div>
+      </div>
+      <div class="card personaje-card">
+        <img src="img/historia-02-reciclar.png" alt="Icono de reciclaje" class="personaje-img personaje-img--sm">
+        <div>
+          <h3>Un viaje que se transforma</h3>
+          <p>Luz enfrenta la contaminación, los residuos regados y las decisiones de la comunidad. Cada acción del jugador va cambiando poco a poco el estado de Moniquirá.</p>
+        </div>
+      </div>
+      <div class="card personaje-card">
+        <img src="img/historia-03-bandera.png" alt="Bandera a cuadros" class="personaje-img personaje-img--sm">
+        <div>
+          <h3>El final depende de ti</h3>
+          <p>No hay un solo final posible: lo que Luz rescata, limpia y decide en cada misión define qué tan recuperado termina quedando Moniquirá.</p>
+        </div>
+      </div>
+      <div class="card personaje-card">
+        <img src="img/historia-04-pergamino.png" alt="Pergamino antiguo" class="personaje-img personaje-img--sm">
+        <div>
+          <h3>Inspirado en la realidad</h3>
+          <p>Inspirada en la situación real de Moniquirá y en lugares reconocibles del municipio, contada como aventura para entenderla jugando.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAJES -->
+  <section id="personajes" class="page">
+    <div class="eyebrow">Quién guía el viaje</div>
+    <h2 class="titulo">Personajes</h2>
+    <div class="historia-grid">
+      <div class="card personaje-card">
+        <img src="img/personaje-luz.png" alt="Luz, protagonista de Eco-Dulce" class="personaje-img">
+        <div>
+          <h3>Luz</h3>
+          <p>Protagonista del juego. Recorre Moniquirá cumpliendo cada misión para cuidar su municipio y su gente, tomando decisiones que definen su destino.</p>
+        </div>
+      </div>
+      <div class="card personaje-card">
+        <img src="img/personaje-cielo.png" alt="Cielo, habitante del Parque Bolívar" class="personaje-img">
+        <div>
+          <h3>Cielo</h3>
+          <p>Voluntaria que cuida el Parque Simón Bolívar desde hace años. Guía a Luz en su misión, compartiendo todo lo que sabe del lugar y de su gente.</p>
+        </div>
+      </div>
+      <div class="card personaje-card">
+        <img src="img/personaje-policia.png" alt="Sergio, patrullero de la plaza de mercado" class="personaje-img">
+        <div>
+          <h3>Sergio</h3>
+          <p>Patrullero de la plaza de mercado, experto en seguridad pero no en medio ambiente. Luz le ayuda a entender cómo cuidarla mejor entre los vecinos.</p>
+        </div>
+      </div>
+      <div class="card personaje-card">
+        <img src="img/personaje-wilson.png" alt="Wilson, habitante del puente Jaime Castro" class="personaje-img">
+        <div>
+          <h3>Wilson</h3>
+          <p>Vive junto al puente Jaime Castro desde hace años y conoce cada rincón del río. Le enseña a Luz por qué cuidar el agua es tan importante para todo Moniquirá.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISIONES -->
+  <section id="misiones" class="page">
+    <div class="eyebrow">Cómo son las misiones</div>
+    <h2 class="titulo">Misiones del videojuego</h2>
+    <div class="historia-grid">
+      <div class="card personaje-card">
+        <img src="img/mision-01-fuente.png" alt="Objeto coleccionable de la misión 1" class="personaje-img">
+        <div>
+          <h3>1. Parque Simón Bolívar</h3>
+          <span class="mision-ods">ODS 11</span>
+          <p>El parque amanece cubierto de basura entre sus árboles. La misión de Luz es recorrerlo, recoger cada residuo y clasificarlo para devolverle su color.</p>
+        </div>
+      </div>
+      <div class="card personaje-card">
+        <img src="img/mision-02-banano.png" alt="Objeto coleccionable de la misión 2" class="personaje-img">
+        <div>
+          <h3>2. Plaza de Mercado</h3>
+          <span class="mision-ods">ODS 12</span>
+          <p>La plaza principal amanece llena de bolsas rotas y basura regada. Luz debe recorrerla, recoger cada residuo y clasificarlo para devolverle su color.</p>
+        </div>
+      </div>
+      <div class="card personaje-card">
+        <img src="img/mision-03-pez.png" alt="Objeto coleccionable de la misión 3" class="personaje-img">
+        <div>
+          <h3>3. Puente Jaime Castro</h3>
+          <span class="mision-ods">ODS 6</span>
+          <p>El puente y el río que corre bajo él están regados de basura de un lado a otro. Luz debe recorrerlo, recoger cada residuo y clasificarlo bien.</p>
+        </div>
+      </div>
+      <div class="card personaje-card">
+        <img src="img/mision-04-guayaba.png" alt="Objeto coleccionable de la misión 4" class="personaje-img">
+        <div>
+          <h3>4. Fábrica de Bocadillo</h3>
+          <span class="mision-ods">ODS 12</span>
+          <p>Detrás de la fábrica se amontonan los residuos de la producción de bocadillo. Luz debe recogerlos y clasificarlos bien para devolverle su color.</p>
+        </div>
+      </div>
+      <div class="card personaje-card">
+        <img src="img/mision-05-planta.png" alt="Objeto coleccionable de la misión 5" class="personaje-img">
+        <div>
+          <h3>5. Moniquirá Renace</h3>
+          <span class="mision-ods">ODS 4</span>
+          <p>Con todo recuperado, la misión final es recorrer Moniquirá completo y disfrutar el resultado: calles limpias y un pueblo que cuida su entorno.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section id="equipo" class="page">
+    <div class="eyebrow">Quiénes hacen Eco-Dulce</div>
+    <h2 class="titulo">Equipo</h2>
+    <div class="equipo-grid">
+      <div class="miembro">
+        <div class="avatar"><img src="img/equipo-sergio.jpg" alt="Sergio Villamil"></div>
+        <h3>Sergio Villamil</h3>
+        <div class="rol">Programador de videojuego</div>
+      </div>
+      <div class="miembro">
+        <div class="avatar"><img src="img/equipo-sharick.jpg" alt="Sharick Mendoza"></div>
+        <h3>Sharick Mendoza</h3>
+        <div class="rol">Diseñadora</div>
+      </div>
+      <div class="miembro">
+        <div class="avatar"><img src="img/equipo-sevastian.jpg" alt="Sevastian Guerrero"></div>
+        <h3>Sevastian Guerrero</h3>
+        <div class="rol">Programador web</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AYUDA -->
+  <section id="ayuda" class="page">
+    <div class="eyebrow">¿Necesitas una mano?</div>
+    <h2 class="titulo">Ayuda</h2>
+    <div class="historia-grid">
+      <div class="card personaje-card">
+        <img src="img/ayuda-carpeta.png" alt="Carpeta" class="personaje-img">
+        <div>
+          <h3>¿Cómo empiezo?</h3>
+          <p>Ve a la sección Descargar, baja el instalador del juego a tu computador y ábrelo. Una vez dentro, Luz te va guiando paso a paso en cada misión: solo sigue las indicaciones en pantalla y explora Moniquirá.</p>
+        </div>
+      </div>
+      <div class="card personaje-card">
+        <img src="img/ayuda-herramientas.png" alt="Herramientas" class="personaje-img">
+        <div>
+          <h3>¿Problemas para jugar?</h3>
+          <p>Verifica que tengas Windows y espacio suficiente en tu equipo antes de instalar. Si el juego no abre o se traba en alguna misión, cierra y vuelve a abrirlo; si el problema sigue, escríbenos por nuestras redes.</p>
+        </div>
+      </div>
+    </div>
+    <div class="ayuda-redes">
+      <div class="footer-redes" style="margin-top: 8px;">
+        <a class="red-icono red-instagram" href="https://www.instagram.com/eco_dulce2026?stkn=cGNycDNhY2I3NW1y" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+        </a>
+        <a class="red-icono red-facebook" href="https://www.facebook.com/share/1Q21R9n8gd/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+        </a>
+        <a class="red-icono red-tiktok" href="https://www.tiktok.com/@eco_dulce2026" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 448 512"><path d="M448 209.9a210.1 210.1 0 0 1-122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278a74.6 74.6 0 1 0 52.2 71.2V0h88a121.2 121.2 0 0 0 1.9 22.2A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCARGAR -->
+  <section id="descargar" class="page">
+    <div class="eyebrow">Llévate a Moniquirá contigo</div>
+    <h2 class="titulo">Descargar Eco-Dulce</h2>
+    <div class="descarga-box">
+      <p>La versión completa del juego, lista para jugar en tu computador.</p>
+      <ul class="specs">
+        <li>Plataforma: Windows (.exe)</li>
+        <li>Motor: RPG Maker XP</li>
+        <li>Misiones: 5</li>
+        <li>Peso estimado: por confirmar</li>
+      </ul>
+      <button class="btn-eco btn-descargar">⬇ Descargar juego</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <img src="img/logo-eco-dulce.png" alt="Logo Eco-Dulce" class="footer-logo">
+  <div class="footer-redes">
+    <a class="red-icono red-instagram" href="https://www.instagram.com/eco_dulce2026?stkn=cGNycDNhY2I3NW1y" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+    <a class="red-icono red-facebook" href="https://www.facebook.com/share/1Q21R9n8gd/" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+    </a>
+    <a class="red-icono red-tiktok" href="https://www.tiktok.com/@eco_dulce2026" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg viewBox="0 0 448 512"><path d="M448 209.9a210.1 210.1 0 0 1-122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278a74.6 74.6 0 1 0 52.2 71.2V0h88a121.2 121.2 0 0 0 1.9 22.2A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/></svg>
+    </a>
+  </div>
+</footer>
+
+<div class="ods-modal-overlay" id="ods-modal-overlay">
+  <div class="ods-modal" role="dialog" aria-modal="true" aria-labelledby="ods-modal-titulo">
+    <button class="ods-modal-cerrar" id="ods-modal-cerrar" aria-label="Cerrar">×</button>
+    <span class="ods-modal-badge" id="ods-modal-badge">ODS</span>
+    <h3 id="ods-modal-titulo"></h3>
+    <p id="ods-modal-texto"></p>
+  </div>
+</div>
+
+<script src="js/script.js?v=3"></script>
+</body>
+</html>
